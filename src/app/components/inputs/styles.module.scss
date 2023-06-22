@@ -1,0 +1,49 @@
+    .inputContent {
+                    display: flex;
+                    justify-content: space-around;
+                    p {
+                        color: #001c32;
+                        font-weight: 600;
+                    }
+                    input {
+                        border: 2px solid #00467d;
+                        border-radius: 5px;
+                    }
+                    .labelName {
+                        input {
+                            padding: 0.25rem;
+                            width: 11rem;
+                            height: 1rem;
+                        }
+                    }
+                    .labelQuantity {
+                        input {
+                            padding: 0.25rem;
+                            width: 5rem;
+                            height: 1rem;
+                        }
+                    }
+                    .labelValue {
+                        input {
+                            padding: 0.25rem;
+                            width: 6rem;
+                            height: 1rem;
+                        }
+                    }
+                }
+                  .buttonContainer {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 3rem;
+                    button {
+                        width: 7rem;
+                        height: 2.5rem;
+                        background: #004f8d;
+                        border: 2px solid #004f8d;
+                        border-radius: 5px;
+                        color: #ffffff;
+                        font-weight: 600;
+                        font-size: 1rem;
+                        cursor: pointer;
+                    }
+                }
