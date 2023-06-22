@@ -1,0 +1,72 @@
+.Container {
+    table {
+        border: 1px solid #00467d;
+        width: auto;
+        border-collapse: collapse;
+        tr {
+            height: 2rem;
+        }
+        thead {
+            th {
+                border: 2px solid #4d8aba;
+                border-collapse: collapse;
+            }
+            .thName {
+                width: 35%;
+            }
+            .thQuatity {
+                width: 20%;
+            }
+            .thValue {
+                width: 20%;
+            }
+            .thController {
+                width: 20%;
+                font-size: small;
+            }
+        }
+        tbody {
+            td {
+                border: 1px solid #00467d;
+            }
+            .tdButton {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 0.5rem;
+                border: none;
+                width: 100%;
+
+                .tdPlus {
+                    width: 2rem;
+                    height: 1rem;
+                    border: none;
+                    border-radius: 5px;
+                    background: #319e09;
+                    font-size: 1.5rem;
+                    color: white;
+                    font-weight: 600;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
+                .tdSubtract {
+                    width: 2rem;
+                    height: 1rem;
+                    border: none;
+                    border-radius: 5px;
+                    background: #9e1611;
+                    font-size: 1.5rem;
+                    color: white;
+                    font-weight: 600;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+   
