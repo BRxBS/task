@@ -1,0 +1,133 @@
+.ulRows {
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        text-align: center;
+
+        li {
+            padding: 0.25rem;
+            border-top: 2px solid #4d8aba;
+        }
+
+        .liName {
+            width: 35%;
+        }
+        .liQuatity {
+            width: 20%;
+        }
+        .liValue {
+            width: 20%;
+        }
+        .tdButton {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 20%;
+
+            .tdPlus {
+                width: 2rem;
+                height: 1rem;
+                border: 1px solid #319e09;
+                border-radius: 5px;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: 0.3s;
+                svg {
+                    color: #319e09;
+                }
+                &:hover {
+                    background-color: #319e09;
+                    svg {
+                        color: white;
+                    }
+                }
+            }
+
+            .tdSubtract {
+                width: 2rem;
+                height: 1rem;
+                border: 1px solid #9e1611;
+                border-radius: 5px;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: 0.3s;
+                svg {
+                    color: #9e1611;
+                }
+                &:hover {
+                    background-color: #9e1611;
+                    svg {
+                        color: white;
+                    }
+                }
+            }
+        }
+        .liEditDelete {
+            display: flex;
+            justify-content: space-around;
+            width: 25%;
+            position: relative;
+            .buttonEdit {
+                background-color: white;
+                border: none;
+                cursor: pointer;
+                color: #676767;
+
+                &:hover {
+                    color: #121212;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 2.25rem;
+                    height: 2px;
+                    border-radius: 4px;
+                    background-color: #00467d;
+                    bottom: 5px;
+                    left: 0.75rem;
+                    transform-origin: right;
+                    transform: scaleX(0);
+                    transition: transform 0.5s ease-in-out;
+                }
+                &:hover::before {
+                    transform-origin: left;
+                    transform: scaleX(1);
+                }
+            }
+            .buttonDelete {
+                background-color: white;
+                color: #676767;
+                border: none;
+                cursor: pointer;
+                &:hover {
+                    color: #121212;
+                }
+                &::before {
+                    content: "";
+
+                    position: absolute;
+                    width: 2.5rem;
+                    height: 2px;
+                    border-radius: 4px;
+                    background-color: #003864;
+                    bottom: 5px;
+                    left: 4.5rem;
+                    transform-origin: right;
+                    transform: scaleX(0);
+                    transition: transform 0.5s ease-in-out;
+                }
+                &:hover::before {
+                    transform-origin: left;
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+}
