@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import Header from "../components/header";
 import Inputs from "../components/inputs";
-import TestTable from "../components/table";
+import TableRows from "../components/tableRows";
 import s from "./styles.module.scss";
 
 export interface Products {
@@ -37,8 +37,20 @@ export default async function Test() {
                             <Inputs />
                         </div>
                         <div className={s.tableWrapper}>
+                            <ul className={s.ul}>
+                                <li className={s.liName}>Nome</li>
+                                <li className={s.liQuatity}>Quantidade</li>
+                                <li className={s.liValue}>Valor</li>
+                                <li className={s.liController}>
+                                    Controle de estoque{" "}
+                                </li>
+                                <li className={s.liEditDelete}>
+                                    <span> Editar </span> <span>Excluir </span>
+                                </li>
+                            </ul>
+
                             {products.map((product) => (
-                                <TestTable key={product.id} product={product} />
+                                <TableRows key={product.id} product={product} />
                             ))}
                         </div>
                     </div>
