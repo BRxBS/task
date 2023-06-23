@@ -13,22 +13,14 @@ export default function Inputs() {
     });
     function handleInputs(e: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = e.target;
-        const parsedValue = name === "product_name" ? value : parseFloat(value);
+        const parsedValue =
+            name === "product_name" ? value : parseFloat(value) || 0; // use value if name is product_name, otherwise use parseFloat or 0
         const intValue = name === "quantity" ? parseInt(value) : parsedValue;
         setInputs({
             ...input,
             [name]: intValue,
         });
     }
-
-    // function handleIntups(e: React.ChangeEvent<HTMLInputElement>) {
-
-    //     setInputs({
-    //         ...input,
-    //         [e.target.name]: e.target.value,
-    //     });
-    // }
-
     function handleClick() {
         try {
             postProducts({
@@ -39,6 +31,11 @@ export default function Inputs() {
         } catch (error) {
             console.log("erro handleClick");
         }
+        setInputs({
+            product_name: "",
+            quantity: 0,
+            value: 0.0,
+        });
     }
     return (
         <>
@@ -48,16 +45,18 @@ export default function Inputs() {
                     <input
                         type="text"
                         placeholder="Nome"
-                        value={input.product_name}
+                        name="product_name"
+                        value={input?.product_name}
                         onChange={handleInputs}
                     />
                 </label>
                 <label className={s.labelQuantity}>
                     <p>Quantidade</p>
                     <input
-                        type="text"
-                        placeholder="Quantidade"
-                        value={input.quantity}
+                        type="number"
+                        placeholder="1"
+                        name="quantity"
+                        value={input?.quantity}
                         onChange={handleInputs}
                     />
                 </label>
@@ -66,13 +65,14 @@ export default function Inputs() {
                     <input
                         type="text"
                         placeholder="Valor"
-                        value={input.value}
+                        name="value"
+                        value={input?.value}
                         onChange={handleInputs}
                     />
                 </label>
-            </div>
-            <div className={s.buttonContainer}>
-                <button onClick={handleClick}>Adicionar</button>
+                <div className={s.buttonContainer}>
+                    <button onClick={handleClick}>Adicionar</button>
+                </div>
             </div>
         </>
     );
