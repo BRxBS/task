@@ -24,10 +24,27 @@ export default function useFetch() {
                 }
             );
             setAuthState({
-                data: response.data
-            })
+                data: response.data,
+            });
         } catch (error) {}
     }
 
-    return{ postProducts};
+    async function updateQuantity(id: number, newQuantity: number) {
+        console.log("id hook", id)
+        console.log("newQuantity hook", newQuantity);
+
+        try {
+            const response = await axios.put(
+                `http://localhost:3000/api/updateProduct/${id}`,
+                {
+                    quantity: newQuantity,
+                }
+            );
+            setAuthState({
+                data: response.data,
+            });
+        } catch (error) {}
+    }
+
+    return { postProducts, updateQuantity };
 }
