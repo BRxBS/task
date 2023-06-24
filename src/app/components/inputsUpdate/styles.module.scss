@@ -1,0 +1,58 @@
+.inputContent {
+    display: block;
+    width: 20rem;
+    justify-content: space-around;
+    p {
+        color: #001c32;
+        font-weight: 600;
+    }
+    input {
+        border: 2px solid #00467d;
+        border-radius: 5px;
+    }
+    .nameWrapper {
+        width: 100%;
+    }
+    .labelName {
+        input {
+            text-transform: capitalize;
+            padding: 0.25rem;
+            width: 96%;
+            height: 1rem;
+        }
+    }
+    .quantValWrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .labelQuantity {
+        input {
+            padding: 0.25rem;
+            width: 5rem;
+            height: 1rem;
+        }
+    }
+    .labelValue {
+        input {
+            padding: 0.25rem;
+            width: 6rem;
+            height: 1rem;
+        }
+    }
+}
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    button {
+        width: 6rem;
+        height: 2rem;
+        background: #004f8d;
+        border: 2px solid #004f8d;
+        border-radius: 5px;
+        color: #ffffff;
+        font-weight: 600;
+
+        cursor: pointer;
+    }
+}
