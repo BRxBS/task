@@ -1,0 +1,34 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    
+}
+/* button */
+::-webkit-scrollbar-button {
+    background: white;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #80abce;
+    border-radius: 100px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b2cce1;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+/* The track NOT covered by the handle.
+::-webkit-scrollbar-track-piece {
+    background: #000; 
+}
+/* Corner */
+::-webkit-scrollbar-corner {
+    background: rgb(255, 254, 254);
+}
+/* Resizer */
+::-webkit-resizer {
+    background: #111;
+}

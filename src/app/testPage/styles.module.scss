@@ -1,5 +1,5 @@
 .mainContainer {
-    height: 30rem;
+    height: 35rem;
     display: flex;
     justify-content: center;
 
@@ -9,54 +9,87 @@
         justify-content: center;
 
         .wrapper {
+            position: relative;
+
             .inputContainer {
                 padding: 2rem 0rem;
                 width: 35rem;
-                height: 11rem;
-                display: block;
-            }
-        }
-        .tableWrapper {
-            border: 2px solid #00467d;
-            border-radius: 5px;
-            width: 100%;
-            .ul {
+                height: auto;
                 display: flex;
                 justify-content: center;
-                list-style-type: none;
+            }
 
-                li {
-                    padding: 0.25rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-decoration: none;
-                    font-weight: 600;
-                    background-color: azure;
+            .tableContainer {
+                width: 37rem;
+                height: 22rem;
+                padding-right: 0.5rem;
+                overflow-x: hidden;
+                overflow-y: auto;
 
-                    text-align: center;
+                // &::after {
+                //     content: "";
+                //     position: absolute;
+                //     bottom: 80px;
+                //     left: 0;
+                //     width: 98%;
+                //     height: 10px;
+                //     z-index: 3;
+                //     box-shadow: 10px -10px 10px rgba(0, 0, 0, 0.2);
+                // }
+
+                .tableWrapper {
+                    position: relative;
+
+                    border: 2px solid #00467d;
+                    border-top: none;
+                    border-radius: 5px;
+                    width: 100%;
+
+                    .ul {
+                        display: flex;
+                        justify-content: center;
+                        list-style-type: none;
+                        position: sticky;
+                        top: 0px;
+                        z-index: 3;
+                        border-top: 2px solid #00467d;
+                        border-top-left-radius: 3px;
+                        border-top-right-radius: 3px;
+
+                        li {
+                            padding: 0.5rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            text-decoration: none;
+                            font-weight: 600;
+                            background-color: azure;
+                            text-align: center;
+                        }
+
+                        .liName {
+                            width: 35%;
+                        }
+                        .liQuatity {
+                            width: 20%;
+                        }
+                        .liValue {
+                            width: 20%;
+                        }
+                        .liController {
+                            width: 20%;
+                            font-size: small;
+                        }
+                        .liEditDelete {
+                            display: flex;
+                            justify-content: space-around;
+                            width: 25%;
+                            font-size: small;
+                        }
+                    }
                 }
 
-                .liName {
-                    width: 35%;
-                }
-                .liQuatity {
-                    width: 20%;
-                }
-                .liValue {
-                    width: 20%;
-                }
-                .liController {
-                    width: 20%;
-                    font-size: small;
-                }
-                .liEditDelete {
-                    display: flex;
-                    justify-content: space-around;
-                    width: 25%;
-
-                    font-size: small;
-                }
+                /* Adicione sombras para criar o efeito visual */
             }
         }
     }

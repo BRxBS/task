@@ -1,8 +1,10 @@
 import { PrismaClient } from "@prisma/client";
 import Header from "../components/header";
-import Inputs from "../components/inputs";
+import InputsPost from "../components/inputsPost";
 import TableRows from "../components/tableRows";
 import s from "./styles.module.scss";
+import "./style.css";
+import RenderTable from "../components/renderTable";
 
 export interface Products {
     id: number;
@@ -21,7 +23,11 @@ async function fetchProducts(): Promise<Products[]> {
             quantity: true,
             value: true,
         },
+        orderBy: {
+            id: "desc",
+        },
     });
+
     return products;
 }
 export default async function Test() {
@@ -34,24 +40,25 @@ export default async function Test() {
                 <div className={s.content}>
                     <div className={s.wrapper}>
                         <div className={s.inputContainer}>
-                            <Inputs />
+                            <InputsPost />
                         </div>
-                        <div className={s.tableWrapper}>
-                            <ul className={s.ul}>
-                                <li className={s.liName}>Nome</li>
-                                <li className={s.liQuatity}>Quantidade</li>
-                                <li className={s.liValue}>Valor</li>
-                                <li className={s.liController}>
+                        <div className={s.tableContainer}>
+                            <div className={s.tableWrapper}>
+                                <ul className={s.ul}>
+                                    <li className={s.liName}>Nome</li>
+                                    <li className={s.liQuatity}>Quantidade</li>
+                                    <li className={s.liValue}>Valor</li>
+                                    {/* <li className={s.liController}>
                                     Controle de estoque{" "}
-                                </li>
-                                <li className={s.liEditDelete}>
-                                    <span> Editar </span> <span>Excluir </span>
-                                </li>
-                            </ul>
+                                </li> */}
+                                    <li className={s.liEditDelete}>
+                                        <span> Editar </span>{" "}
+                                        <span>Excluir </span>
+                                    </li>
+                                </ul>
 
-                            {products.map((product) => (
-                                <TableRows key={product.id} product={product} />
-                            ))}
+                                <RenderTable />
+                            </div>
                         </div>
                     </div>
                 </div>
