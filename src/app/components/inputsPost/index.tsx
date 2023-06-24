@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { TheContext } from "@/app/context/FetchContext";
+import { useContext, useState } from "react";
 import useFetch from "../../../../hooks/useFetch";
 import s from "./styles.module.scss";
 
-export default function Inputs() {
+export default function InputsPost() {
     const { postProducts } = useFetch();
 
     const [input, setInputs] = useState({
