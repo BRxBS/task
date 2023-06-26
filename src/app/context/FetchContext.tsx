@@ -27,7 +27,7 @@ interface ContextProps {
 
 export const TheContext = createContext<ContextProps>({
     loading: false,
-    setlLoading:  () => {},
+    setlLoading: () => {},
     productState: [],
     postProducts: () => Promise.resolve(),
     updateQuantity: () => Promise.resolve(),
@@ -54,7 +54,10 @@ export default function ProductContext({
     }) {
         try {
             const response = await axios.post(
-                "http://localhost:3000/api/productPost",
+                "https://task-brxbs.vercel.app/api/productPost",
+                // para rodar no local host
+                // http://localhost:3000/api/productPost
+
                 {
                     product_name,
                     quantity,
@@ -68,7 +71,9 @@ export default function ProductContext({
     async function updateQuantity(id: number, newQuantity: number) {
         try {
             const response = await axios.put(
-                `http://localhost:3000/api/updateQuantityProduct/${id}`,
+                `https://task-brxbs.vercel.app/api/updateQuantityProduct/${id}`,
+                // para rodar no local host
+                // http://localhost:3000/api/updateQuantityProduct/${id}
                 {
                     quantity: newQuantity,
                 }
@@ -79,7 +84,9 @@ export default function ProductContext({
     async function deleteProduct(id: number) {
         try {
             const response = await axios.delete(
-                `http://localhost:3000/api/deleteProduct/${id}`
+                `https://task-brxbs.vercel.app/api/deleteProduct/${id}`
+                // para rodar no local host
+                // http://localhost:3000/api/deleteProduct/${id}
             );
             setProductState(response.data);
         } catch (error) {}
@@ -92,7 +99,9 @@ export default function ProductContext({
     ) {
         try {
             const response = await axios.put(
-                `http://localhost:3000/api/updateInfo/${id}`,
+                `https://task-brxbs.vercel.app/api/updateInfo/${id}`,
+                // para rodar no local host
+                // http://localhost:3000/api/updateInfo/${id}
                 {
                     quantity: newQuantity,
                     value: newValue,
