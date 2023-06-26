@@ -55,15 +55,14 @@ export default function ProductContext({
         try {
             const response = await axios.post(
                 "https://task-brxbs.vercel.app/api/productPost",
-                // para rodar no local host
-                // http://localhost:3000/api/productPost
-
                 {
                     product_name,
                     quantity,
                     value,
                 }
             );
+            // para rodar no local host
+            // http://localhost:3000/api/productPost
             setProductState(response.data);
         } catch (error) {}
     }
@@ -72,12 +71,13 @@ export default function ProductContext({
         try {
             const response = await axios.put(
                 `https://task-brxbs.vercel.app/api/updateQuantityProduct/${id}`,
-                // para rodar no local host
-                // http://localhost:3000/api/updateQuantityProduct/${id}
+
                 {
                     quantity: newQuantity,
                 }
             );
+            // para rodar no local host
+            // http://localhost:3000/api/updateQuantityProduct/${id}
             setProductState(response.data);
         } catch (error) {}
     }
@@ -85,9 +85,9 @@ export default function ProductContext({
         try {
             const response = await axios.delete(
                 `https://task-brxbs.vercel.app/api/deleteProduct/${id}`
-                // para rodar no local host
-                // http://localhost:3000/api/deleteProduct/${id}
             );
+            // para rodar no local host
+            // http://localhost:3000/api/deleteProduct/${id}
             setProductState(response.data);
         } catch (error) {}
     }
@@ -100,14 +100,15 @@ export default function ProductContext({
         try {
             const response = await axios.put(
                 `https://task-brxbs.vercel.app/api/updateInfo/${id}`,
-                // para rodar no local host
-                // http://localhost:3000/api/updateInfo/${id}
+
                 {
                     quantity: newQuantity,
                     value: newValue,
                     product_name: newProductName,
                 }
             );
+            // para rodar no local host
+            // http://localhost:3000/api/updateInfo/${id}
             setProductState(response.data);
         } catch (error) {}
     }
