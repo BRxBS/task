@@ -3,7 +3,11 @@ import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
 
-export async function DELETE(request: Request, { params }:  {params: { id: number } } ) {
+export async function DELETE(
+    request: Request,
+    { params }: { params: { id: number } }
+) {
+    const origin = request.headers.get("origin");
     const id = params.id;
 
     try {
@@ -27,6 +31,7 @@ export async function DELETE(request: Request, { params }:  {params: { id: numbe
         return new NextResponse(json, {
             status: 200,
             headers: {
+                "Acces-Control-Allow-Origin": origin || "*",
                 "Content-Type": "application/json",
             },
         });

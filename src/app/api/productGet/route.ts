@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 const prisma = new PrismaClient();
 
 export async function GET(request: Request) {
+    const origin= request.headers.get('origin')
     const products = await prisma.products.findMany({
         select: {
             id: true,
@@ -20,6 +21,7 @@ export async function GET(request: Request) {
     return new NextResponse(json, {
         status: 200,
         headers: {
+            'Acces-Control-Allow-Origin': origin || "*",
             "Content-Type": "application/json",
         },
     });

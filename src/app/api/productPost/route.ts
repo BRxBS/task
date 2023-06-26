@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
+    const origin = request.headers.get("origin");
     const { product_name, quantity, value } = await request.json();
 
     const product = await prisma.products.create({
@@ -21,6 +22,7 @@ export async function POST(request: Request) {
     return new NextResponse(json, {
         status: 200,
         headers: {
+            "Acces-Control-Allow-Origin": origin || "*",
             "Content-Type": "application/json",
         },
     });
