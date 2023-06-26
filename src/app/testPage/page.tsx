@@ -69,88 +69,75 @@ export default function Test() {
                         <div className={s.inputContainer}>
                             <InputsPost />
                         </div>
-                        {products ? (
-                            <>
-                                <div className={s.noFilters}>
-                                    {active ? (
-                                        <button onClick={handleNoFilters}>
-                                            Limpar Filtros
-                                        </button>
-                                    ) : (
-                                        <span> </span>
-                                    )}
-                                </div>
-                                <div className={s.tableContainer}>
-                                    <div className={s.tableWrapper}>
-                                        <ul className={s.ul}>
-                                            <li className={s.liName}>
-                                                Nome
-                                                <div
-                                                    className={
-                                                        s.filterNameWrapper
-                                                    }
-                                                >
-                                                    <CaretUp
-                                                        onClick={
-                                                            handleSortAscendingLetters
-                                                        }
-                                                        className={s.CaretUp}
-                                                    />
-                                                    <br />
-                                                    <CaretDown
-                                                        onClick={
-                                                            handleSortDescendingLetters
-                                                        }
-                                                        className={s.CaretDown}
-                                                    />
-                                                </div>
-                                            </li>
-                                            <li className={s.liQuatity}>
-                                                Quantidade
-                                            </li>
-                                            <li className={s.liValue}>
-                                                Valor
-                                                <div
-                                                    className={s.filterWrapper}
-                                                >
-                                                    <CaretUp
-                                                        onClick={
-                                                            handleSortAscendingNumbers
-                                                        }
-                                                        className={s.CaretUp}
-                                                    />
-                                                    <br />
-                                                    <CaretDown
-                                                        onClick={
-                                                            handleSortDescendingNumbers
-                                                        }
-                                                        className={s.CaretDown}
-                                                    />
-                                                </div>
-                                            </li>
-                                            <li className={s.liEditDelete}>
-                                                <span> Editar </span>{" "}
-                                                <span>Excluir </span>
-                                            </li>
-                                        </ul>
-
-                                        {products?.map((product) => (
-                                            <TableRows
-                                                key={product.id}
-                                                product={product}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-                            </>
-                        ) : (
-                            <div className={s.divNoContent}>
-                                {" "}
-                                <h2>
-                                    No Momento não há nenhum produto na tabela.
-                                </h2>{" "}
+                        <>
+                            <div className={s.noFilters}>
+                                {active ? (
+                                    <button onClick={handleNoFilters}>
+                                        Limpar Filtros
+                                    </button>
+                                ) : (
+                                    <span> </span>
+                                )}
                             </div>
-                        )}
+                            <div className={s.tableContainer}>
+                                <div className={s.tableWrapper}>
+                                    <ul className={s.ul}>
+                                        <li className={s.liName}>
+                                            Nome
+                                            <div
+                                                className={s.filterNameWrapper}
+                                            >
+                                                <CaretUp
+                                                    onClick={
+                                                        handleSortAscendingLetters
+                                                    }
+                                                    className={s.CaretUp}
+                                                />
+                                                <br />
+                                                <CaretDown
+                                                    onClick={
+                                                        handleSortDescendingLetters
+                                                    }
+                                                    className={s.CaretDown}
+                                                />
+                                            </div>
+                                        </li>
+                                        <li className={s.liQuatity}>
+                                            Quantidade
+                                        </li>
+                                        <li className={s.liValue}>
+                                            Valor
+                                            <div className={s.filterWrapper}>
+                                                <CaretUp
+                                                    onClick={
+                                                        handleSortAscendingNumbers
+                                                    }
+                                                    className={s.CaretUp}
+                                                />
+                                                <br />
+                                                <CaretDown
+                                                    onClick={
+                                                        handleSortDescendingNumbers
+                                                    }
+                                                    className={s.CaretDown}
+                                                />
+                                            </div>
+                                        </li>
+                                        <li className={s.liEditDelete}>
+                                            <span> Editar </span>{" "}
+                                            <span>Excluir </span>
+                                        </li>
+                                    </ul>
+
+                                    {products?.map((product) => (
+                                        <TableRows
+                                            key={product.id}
+                                            product={product}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        </>
                     </div>
                 </div>
             </main>
