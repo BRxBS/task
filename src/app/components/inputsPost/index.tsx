@@ -1,11 +1,11 @@
 "use client";
 import { TheContext } from "@/app/context/FetchContext";
 import { useContext, useState } from "react";
-import useFetch from "../../../../hooks/useFetch";
+// import useFetch from "../../../../hooks/useFetch";
 import s from "./styles.module.scss";
 
 export default function InputsPost() {
-    const { postProducts } = useFetch();
+    const { postProducts } = useContext(TheContext);
 
     const [input, setInputs] = useState({
         product_name: "",
@@ -30,7 +30,7 @@ export default function InputsPost() {
                 value: input.value,
             });
         } catch (error) {
-            console.log("erro handleClick");
+            console.log("erro handleClick", error);
         }
         setInputs({
             product_name: "",
@@ -55,7 +55,7 @@ export default function InputsPost() {
                     <p>Quantidade</p>
                     <input
                         type="number"
-                        placeholder="1"
+                        placeholder="0"
                         name="quantity"
                         value={input?.quantity}
                         onChange={handleInputs}

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Minus, Plus, PencilSimpleLine, TrashSimple, X } from "phosphor-react";
 import s from "./styles.module.scss";
 import InputsUpdate from "../inputsUpdate";
-import useFetch from "../../../../hooks/useFetch";
+import { TheContext } from "@/app/context/FetchContext";
 
 interface Props {
     product: Products;
@@ -15,11 +15,11 @@ export default function TableRows({ product }: Props) {
     const [openModalEdit, setOpenModalEdit] = useState(false);
     const [openDeleteModal, setOpenDeleteModal] = useState(false);
     const [quantity, setQuantity] = useState(product.quantity);
-    const { updateQuantity, deleteProduct } = useFetch();
+    const { updateQuantity, deleteProduct } = useContext(TheContext);
 
     const customStyles = {
         content: {
-            top: "50%",
+            top: "55%",
             left: "50%",
             right: "auto",
             bottom: "auto",
@@ -31,14 +31,31 @@ export default function TableRows({ product }: Props) {
         transform: "translateX(1500%)",
         cursor: "pointer",
     };
+    const customXStylesDelete = {
+        transform: "translateX(1400%)",
+        cursor: "pointer",
+    };
     const customDeleteYes = {
         transform: "translateX(150%)",
         marginTop: "1rem",
+        marginLeft: "-3.5rem",
         width: "5rem",
         height: "2rem",
         cursor: "pointer",
         background: "#004f8d",
         border: "2px solid #004f8d",
+        borderRadius: " 5px",
+        color: " #ffffff",
+    };
+    const customDeleteNo = {
+        transform: "translateX(150%)",
+        marginTop: "1rem",
+        marginLeft: "1.25rem",
+        width: "5rem",
+        height: "2rem",
+        cursor: "pointer",
+        background: "#80abce",
+        border: "2px solid #80abce",
         borderRadius: " 5px",
         color: " #ffffff",
     };
@@ -57,6 +74,7 @@ export default function TableRows({ product }: Props) {
     }
     function handleDeleteProduct() {
         deleteProduct(product.id);
+        console.log("oi delete handle", product.id);
         setOpenDeleteModal(false);
     }
 
@@ -107,13 +125,16 @@ export default function TableRows({ product }: Props) {
             >
                 <X
                     onClick={handleCloseModalDelete}
-                    style={customXStyles}
+                    style={customXStylesDelete}
                     size={20}
                 />
 
                 <p>Tem certeza que deseja excluir esta linha?</p>
                 <button style={customDeleteYes} onClick={handleDeleteProduct}>
                     Sim
+                </button>
+                <button style={customDeleteNo} onClick={handleCloseModalDelete}>
+                    Não
                 </button>
             </Modal>
             {/* end modal Delete */}

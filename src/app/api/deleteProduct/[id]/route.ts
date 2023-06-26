@@ -6,7 +6,6 @@ const prisma = new PrismaClient();
 export async function DELETE(request: Request, { params }) {
     const id = params.id;
 
-    console.log("id", id);
     try {
         const productId = Number(id);
 

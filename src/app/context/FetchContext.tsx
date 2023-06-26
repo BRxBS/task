@@ -1,17 +1,18 @@
 "use client";
-
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
 
 interface Products {
+    id?: number;
     product_name: string;
     quantity: number;
     value: number;
 }
 
 interface ContextProps {
+    loading: boolean;
+    setlLoading: React.Dispatch<React.SetStateAction<boolean>>;
     productState: Products[];
-    fetchProducts: () => void;
     postProducts: (product: Products) => Promise<void>;
     updateQuantity: (id: number, newQuantity: number) => Promise<void>;
     deleteProduct: (id: number) => Promise<void>;
@@ -21,15 +22,18 @@ interface ContextProps {
         newQuantity: number,
         newProductName: string
     ) => Promise<void>;
+    setProductState: React.Dispatch<React.SetStateAction<Products[]>>;
 }
 
 export const TheContext = createContext<ContextProps>({
+    loading: false,
+    setlLoading:  () => {},
     productState: [],
-    fetchProducts: () => Promise.resolve(),
     postProducts: () => Promise.resolve(),
     updateQuantity: () => Promise.resolve(),
     deleteProduct: () => Promise.resolve(),
     updateInfoProduct: () => Promise.resolve(),
+    setProductState: () => {},
 });
 
 export default function ProductContext({
@@ -38,25 +42,7 @@ export default function ProductContext({
     children: React.ReactNode;
 }) {
     const [productState, setProductState] = useState<Products[]>([]);
-
-    console.log("productState context", productState);
-    console.log("oi de fora");
-
-    async function fetchProducts() {
-        console.log("oi de dentro");
-        try {
-            const response = await axios.get(
-                "http://localhost:3000/api/productGet"
-            );
-            console.log("response", response);
-            console.log("response", response.data);
-            setProductState(response.data);
-        } catch (error) {
-            console.log("error do catch authContext");
-            throw new Error();
-        }
-    }
-
+    const [loading, setlLoading] = useState(false);
     async function postProducts({
         product_name,
         quantity,
@@ -80,9 +66,6 @@ export default function ProductContext({
     }
 
     async function updateQuantity(id: number, newQuantity: number) {
-        console.log("id hook", id);
-        console.log("newQuantity hook", newQuantity);
-
         try {
             const response = await axios.put(
                 `http://localhost:3000/api/updateQuantityProduct/${id}`,
@@ -95,7 +78,6 @@ export default function ProductContext({
     }
     async function deleteProduct(id: number) {
         try {
-            console.log("oi delete", id);
             const response = await axios.delete(
                 `http://localhost:3000/api/deleteProduct/${id}`
             );
@@ -125,12 +107,14 @@ export default function ProductContext({
         <TheContext.Provider
             value={{
                 ...productState,
+                loading,
+                setlLoading,
                 productState,
-                fetchProducts,
                 deleteProduct,
                 postProducts,
                 updateInfoProduct,
                 updateQuantity,
+                setProductState,
             }}
         >
             {children}

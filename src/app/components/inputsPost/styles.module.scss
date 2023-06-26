@@ -1,6 +1,8 @@
 .inputContent {
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
     p {
         color: #001c32;
         font-weight: 600;
@@ -27,29 +29,216 @@
     .labelValue {
         input {
             padding: 0.25rem;
-            width: 6rem;
+            width: 8rem;
             height: 1rem;
         }
     }
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        button {
+            width: 6rem;
+            height: 2rem;
+            background: #004f8d;
+            border: 2px solid #004f8d;
+            border-radius: 5px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: medium;
+            cursor: pointer;
+            transition: transform 0.3s;
+            &:hover {
+                background-color: #003f70;
+                border: 2px solid #003f70;
+            }
+        }
+    }
 }
-.buttonContainer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    button {
-        width: 6rem;
-        height: 2.5rem;
-        background: #004f8d;
-        border: 2px solid #004f8d;
-        border-radius: 5px;
-        color: #ffffff;
-        font-weight: 600;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: transform 0.3s;
-        &:hover {
-            background-color: #003f70;
-            border: 2px solid #003f70;
+@media only screen and (min-width: 360px) {
+    .mainContainer {
+        .content {
+            .imageAnimationContainer {
+                height: 30rem;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 414px) {
+    .mainContainer {
+        .content {
+            .imageAnimationContainer {
+                height: 35rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .inputContent {
+        .buttonContainer {
+            margin-top: 1rem;
+        }
+    }
+}
+@media only screen and (min-width: 600px) {
+    .inputContent {
+        .buttonContainer {
+            margin-top: 0rem;
+        }
+    }
+}
+@media only screen and (min-width: 1280px) {
+    .mainContainer {
+        .content {
+            .imageAnimationContainer {
+                height: 24rem;
+            }
+            .linkContainer {
+                a {
+                    margin-left: 3rem;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1366px) {
+    .inputContent {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        p {
+            color: #001c32;
+            font-weight: 600;
+        }
+        input {
+            border: 2px solid #00467d;
+            border-radius: 5px;
+        }
+        .labelName {
+            input {
+                text-transform: capitalize;
+                padding: 0.25rem;
+                width: 11rem;
+                height: 1rem;
+            }
+        }
+        .labelQuantity {
+            input {
+                padding: 0.25rem;
+                width: 5rem;
+                height: 1rem;
+            }
+        }
+        .labelValue {
+            input {
+                padding: 0.25rem;
+                width: 6rem;
+                height: 1rem;
+            }
+        }
+        .buttonContainer {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            button {
+                width: 6rem;
+                height: 2rem;
+                background: #004f8d;
+                border: 2px solid #004f8d;
+                border-radius: 5px;
+                color: #ffffff;
+                font-weight: 600;
+                font-size: medium;
+                cursor: pointer;
+                transition: transform 0.3s;
+                &:hover {
+                    background-color: #003f70;
+                    border: 2px solid #003f70;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .mainContainer {
+        .content {
+            .linkContainer {
+                a {
+                    margin-left: 5rem;
+                    font-size: 2rem;
+                }
+            }
+            .imageAnimationContainer {
+                height: 30rem;
+                .animationContainer {
+                    width: 60%;
+                    height: 60%;
+                    left: -25%;
+                }
+            }
+            img {
+                position: absolute;
+                width: 25rem;
+                height: 25rem;
+                object-fit: contain;
+                z-index: 1;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1536px) {
+    .mainContainer {
+        .content {
+            .linkContainer {
+                a {
+                    margin-left: 5rem;
+                    font-size: 2.5rem;
+                }
+            }
+            .imageAnimationContainer {
+                height: 24rem;
+                .animationContainer {
+                    width: 60%;
+                    height: 60%;
+                    left: -25%;
+                }
+            }
+            img {
+                position: absolute;
+                width: 25rem;
+                height: 25rem;
+                object-fit: contain;
+                z-index: 1;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1920px) {
+    .mainContainer {
+        .content {
+            .linkContainer {
+                a {
+                    margin-left: 5rem;
+                    font-size: 3rem;
+                }
+            }
+            .imageAnimationContainer {
+                height: 35rem;
+                .animationContainer {
+                    width: 80%;
+                    height: 80%;
+                    left: -26%;
+                }
+            }
+            img {
+                position: absolute;
+                width: 30rem;
+                height: 30rem;
+                object-fit: contain;
+                z-index: 1;
+            }
         }
     }
 }

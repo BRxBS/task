@@ -1,23 +1,18 @@
 .mainContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: #01589d;
+    min-height: 50rem;
+
+    overflow-y: hidden;
     .content {
-        min-height: 30rem;
-        padding: 4rem 2rem;
         display: block;
 
-        img {
-            width: 38rem;
-            height: 12rem;
-        }
         .linkContainer {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 6rem;
 
             a {
                 font-size: 2rem;
@@ -29,5 +24,43 @@
                 }
             }
         }
+    }
+}
+@media only screen and (min-width: 360px) {
+    .mainContainer {
+        min-height: 53rem;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    .mainContainer {
+        min-height: 56rem;
+    }
+}
+@media only screen and (min-width: 1280px) {
+    .mainContainer {
+        min-height: 720px;
+    }
+}
+@media only screen and (min-width: 1366px) {
+    .mainContainer {
+        min-height: 40rem;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    .mainContainer {
+        min-height: 900px;
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+    .mainContainer {
+        min-height: 60rem;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .mainContainer {
+        min-height: 1080px;
     }
 }

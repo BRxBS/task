@@ -2,7 +2,7 @@
 import { useContext, useState } from "react";
 import s from "./styles.module.scss";
 import { TheContext } from "@/app/context/FetchContext";
-import useFetch from "../../../../hooks/useFetch";
+// import useFetch from "../../../../hooks/useFetch";
 
 interface Props {
     productId: number;
@@ -18,7 +18,7 @@ export default function InputsUpdate({
     value,
     handleCloseModal,
 }: Props) {
-    const { updateInfoProduct } = useFetch();
+    const { updateInfoProduct } = useContext(TheContext);;
 
     const [input, setInputs] = useState({
         product_name: product_name,

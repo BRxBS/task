@@ -4,6 +4,7 @@
         justify-content: center;
         list-style-type: none;
         text-align: center;
+        position: relative;
 
         li {
             padding: 0.25rem;
@@ -11,7 +12,7 @@
         }
 
         .liName {
-            width: 35%;
+            width: 30%;
         }
         .liQuatity {
             width: 20%;
@@ -77,6 +78,7 @@
             justify-content: space-around;
             width: 25%;
             position: relative;
+
             .buttonEdit {
                 display: flex;
                 align-items: center;
@@ -91,12 +93,12 @@
                 &::before {
                     content: "";
                     position: absolute;
-                    width: 2rem;
+                    width: 1.25rem;
                     height: 2px;
                     border-radius: 4px;
                     background-color: #00467d;
                     bottom: 3px;
-                    left: 1.25rem;
+                    left: 0.75rem;
                     transform-origin: right;
                     transform: scaleX(0);
                     transition: transform 0.3s ease-in-out;
@@ -118,14 +120,13 @@
                 }
                 &::before {
                     content: "";
-
                     position: absolute;
-                    width: 2rem;
+                    width: 1.25rem;
                     height: 2px;
                     border-radius: 4px;
                     background-color: #003864;
                     bottom: 3px;
-                    left: 5.5rem;
+                    left: 3.1rem;
                     transform-origin: right;
                     transform: scaleX(0);
                     transition: transform 0.3s ease-in-out;
@@ -133,6 +134,249 @@
                 &:hover::before {
                     transform-origin: left;
                     transform: scaleX(1);
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 390px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.5rem;
+                        left: 0.75rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.5rem;
+                        left: 3.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 414px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.5rem;
+                        left: 0.75rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.5rem;
+                        left: 3.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 500px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.5rem;
+                        left: 1.25rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.5rem;
+                        left: 4.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.5rem;
+                        left: 1.75rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.5rem;
+                        left: 6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 800px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.5rem;
+                        left: 1.75rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.5rem;
+                        left: 6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 900px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.25rem;
+                        left: 2rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.25rem;
+                        left: 7rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1000px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.25rem;
+                        left: 2rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.25rem;
+                        left: 6.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.5rem;
+                        left: 2rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.5rem;
+                        left: 7rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1366px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.5rem;
+                        left: 2rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.5rem;
+                        left: 7.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.5rem;
+                        left: 2.75rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.5rem;
+                        left: 9.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1536px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.5rem;
+                        left: 3rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.5rem;
+                        left: 10.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1920px) {
+    .ulRows {
+        ul {
+            .liEditDelete {
+                .buttonEdit {
+                    &::before {
+                        width: 1.5rem;
+                        left: 3rem;
+                    }
+                }
+                .buttonDelete {
+                    &::before {
+                        width: 1.5rem;
+                        left: 10.5rem;
+                    }
                 }
             }
         }
